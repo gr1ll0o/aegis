@@ -1,13 +1,16 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 
+let win;
+
 function createWindow() {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
     webPreferences: {
-      nodeIntegration: true, // permite usar Node en renderer
-      contextIsolation: false
+      nodeIntegration: true,
+      contextIsolation: false,
     },
   });
 
@@ -17,4 +20,8 @@ function createWindow() {
 app.whenReady().then(createWindow);
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+ipcMain.on("minimize-app", () => {
+  win.minimize();
 });
