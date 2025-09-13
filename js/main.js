@@ -19,3 +19,7 @@ bcrypt.compare("prueba1234", "HASH", (error, response) => {
     if (error) { console.log(error);return; }
     console.log(response);
 });
+
+document.getElementById('add-app').addEventListener('click', () => {
+    
+});

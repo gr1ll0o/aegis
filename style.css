@@ -157,3 +157,50 @@ header {
     background-color: #6c6c76;
     transform: scale(0.95);
 }
+
+.add-app-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all ease 0.3s;
+}
+
+.add-app-menu {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+#nameService, #passwdService {
+    margin: 5px;
+    background-color: #222;
+    border: none;
+    border-bottom: #000 solid 2px;
+    font-size: 15px;
+    width: 300px;
+    user-select: none;
+}
+
+#addBtn {
+    background-color: #333;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: all ease 0.1s;
+    cursor: pointer;
+}
+
+#addBtn:hover {
+    background-color: #444;
+}

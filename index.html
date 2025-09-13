@@ -29,9 +29,27 @@
                     </div>
                     
                 </div>
-                <input id="add-app" type="button" value=" + ">
+                <input id="add-app" type="button" value=" + " onclick="document.getElementById('addInterface').style.display = 'flex'">
             </div>
             <div class="info-app"></div>
+        </div>
+
+        <div class="add-app-interface" id="addInterface" style="display: none;">
+            <div class="add-app-menu">
+                <div style="display: flex;justify-content: space-between;">
+                    <h1>Añadir aplicación</h1>
+                </div><br>
+                <p>Nombre del servicio/aplicación</p>
+                <input type="text" id="nameService" placeholder="Instagram, Google, Github..." width="200px">
+                <p>Contraseña</p>
+                <input type="password" id="passwdService" placeholder="****" width="200px"><br><br>
+                <div style="display: flex;">
+                    <center>
+                        <input id="addBtn" type="button" value="  Agregar  ">
+                        <input id="addBtn" type="button" value=" Cancelar " onclick="document.getElementById('addInterface').style.display = 'none';">
+                    </center>
+                </div>
+            </div>
         </div>
 
         <script src="js/main.js"></script>
