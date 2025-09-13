@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
 const { ipcRenderer } = require('electron');
+
+const apps = document.getElementById('appss');
+const addInterface = document.getElementById('addInterface');
 
 document.getElementById("min-btn").addEventListener("click", () => {
   ipcRenderer.send("minimize-app");
@@ -20,6 +22,36 @@ bcrypt.compare("prueba1234", "HASH", (error, response) => {
     console.log(response);
 });
 
-document.getElementById('add-app').addEventListener('click', () => {
-    
+document.getElementById('addBtn').addEventListener('click', () => {
+    const nameInput = document.getElementById('nameService');
+    const passwdInput = document.getElementById('passwdService');
+
+    const serviceName = nameInput.value.trim();
+    const map = {
+      youtube: 'M', twitter: 'D', facebook: 'E', google: 'H',
+      instagram: 'Q', spotify: 'W', discord: 'Y', pinterest: 'A'
+    };
+    const logo = map[serviceName.toLowerCase()] || 'K';
+    if (document.getElementById('null')) {
+        apps.innerHTML = ``;
+    }
+    apps.innerHTML += `
+        <div class="app">
+            <p style="font-family: 'Media';color: #fff;font-size:40px;">${logo}</p><br>
+            <h4 style="margin: 10px;">${serviceName}</h4>
+            <input type="button" value="  -  " style="font-size: 25px; background-color: #111;align-self:right;border-radius: 100px;padding: 5px;border: solid 1px #000;">
+        </div>
+    `;
+    nameInput.value = '';
+    passwdInput.value = '';
+    addInterface.style.display = 'none';
+});
+
+document.getElementById('CancelBtn').addEventListener('click', () => {
+    const nameInput = document.getElementById('nameService');
+    const passwdInput = document.getElementById('passwdService');
+
+    nameInput.value = '';
+    passwdInput.value = '';
+    document.getElementById('addInterface').style.display = 'none';
 });
