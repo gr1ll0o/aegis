@@ -18,16 +18,8 @@
         <div class="container">
             <div class="nav-apps">
                 <p>Aplications</p>
-                <div class="apps">
-                    <div class="app">
-                        <p style="font-family: 'Media';color: #fff;font-size:40px;">Q</p><br>
-                        <h4 style="margin: 10px;">Instagram</h4>
-                    </div>
-                    <div class="app">
-                        <p style="font-family: 'Media';color: #fff;font-size:40px;">D</p><br>
-                        <h4 style="margin: 10px;">Twitter</h4>
-                    </div>
-                    
+                <div class="apps" id="appss">
+                    <p id="null" style="color: #666;font-size: 16px;">No tienes ninguna aplicacion añadida.</p>
                 </div>
                 <input id="add-app" type="button" value=" + " onclick="document.getElementById('addInterface').style.display = 'flex'">
             </div>
@@ -46,7 +38,7 @@
                 <div style="display: flex;">
                     <center>
                         <input id="addBtn" type="button" value="  Agregar  ">
-                        <input id="addBtn" type="button" value=" Cancelar " onclick="document.getElementById('addInterface').style.display = 'none';">
+                        <input id="CancelBtn" type="button" value=" Cancelar ">
                     </center>
                 </div>
             </div>
