@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Media';
+    src: url('fonts/Social\ Media\ Circled.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -55,7 +62,6 @@ header {
     padding: 12px;
     font-size: 25px;
     height: 100%;
-    
 }
 
 #exit-btn:hover {
@@ -89,10 +95,65 @@ header {
 }
 
 .nav-apps {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     width: 35%;
     height: 100%;
     background-color: #2a282f;
     user-select: none;
-    overflow-y: hidden;
+}
+
+.nav-apps > p {
+    margin-bottom: 10px;
+}
+
+.apps {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.app {
+    background-color: #1b1b1f;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.02s;
+    cursor: pointer;
+}
+
+.app:hover {
+    transform: scale(0.95);
+}
+
+.app:active {
+    transform: scale(0.9);
+}
+
+#add-app {
+    margin-top: auto;
+    align-self: flex-end;
+    background-color: #44444E;
+    color: #fff;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 3px 4px 3px #000;
+    transition: all ease 0.1s;
+    cursor: pointer;
+}
+
+#add-app:hover {
+    background-color: #5b5b67;
+    transform: scale(1.05);
+}
+
+#add-app:active {
+    background-color: #6c6c76;
+    transform: scale(0.95);
 }
