@@ -190,7 +190,7 @@ header {
     user-select: none;
 }
 
-#addBtn {
+#addBtn, #CancelBtn {
     background-color: #333;
     color: #fff;
     font-size: 20px;
@@ -201,6 +201,6 @@ header {
     cursor: pointer;
 }
 
-#addBtn:hover {
+#addBtn:hover, #CancelBtn:hover {
     background-color: #444;
 }

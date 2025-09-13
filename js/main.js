@@ -39,7 +39,6 @@ document.getElementById('addBtn').addEventListener('click', () => {
         <div class="app">
             <p style="font-family: 'Media';color: #fff;font-size:40px;">${logo}</p><br>
             <h4 style="margin: 10px;">${serviceName}</h4>
-            <input type="button" value="  -  " style="font-size: 25px; background-color: #111;align-self:right;border-radius: 100px;padding: 5px;border: solid 1px #000;">
         </div>
     `;
     nameInput.value = '';
