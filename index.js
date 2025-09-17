@@ -9,6 +9,7 @@ function createWindow() {
     height: 600,
     frame: false,
     webPreferences: {
+      // devTools: false,
       nodeIntegration: true,
       contextIsolation: false,
     },
