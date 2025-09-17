@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!-- HEADER -->
         <header class="drag">
             <div class="logo"><h1>Aegis</h1></div>
 
@@ -26,6 +27,7 @@
             <div class="info-app"></div>
         </div>
 
+        <!-- ADD APP -->
         <div class="add-app-interface" id="addInterface" style="display: none;">
             <div class="add-app-menu">
                 <div style="display: flex;justify-content: space-between;">
@@ -39,6 +41,40 @@
                     <center>
                         <input id="addBtn" type="button" value="  Agregar  ">
                         <input id="CancelBtn" type="button" value=" Cancelar ">
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <!-- NO MASTERKEY -->
+        <div class="add-app-interface" id="noMasterkey" style="display: none;">
+            <div class="add-app-menu">
+                <div style="display: flex;justify-content: space-between;">
+                    <h1>Bienvenido a Aegis</h1>
+                </div>
+                <p id="masterkeyText" style="font-size: 12px;">Introduzca su masterkey para acceder la próxima vez (Minimo 6 caracteres).</p>
+                <input type="password" id="firstPasswd" placeholder="" width="200px"><br>
+                <p id="masterkeyPWText" style="font-size: 12px;">Reescriba su contraseña</p>
+                <input type="password" id="secondPasswd" placeholder="" width="200px"><br><br>
+                <div style="display: flex;">
+                    <center>
+                        <input id="validMasterkey" type="button" value="  Aceptar  ">
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="add-app-interface" id="loginForm" style="display: none;">
+            <div class="add-app-menu">
+                <div style="display: flex;justify-content: space-between;">
+                    <h1>Bienvenido a Aegis</h1>
+                </div>
+                <p id="masterkeyText" style="font-size: 12px;">Inicie sesión.</p>
+                <input type="password" id="passwd" placeholder="" width="200px"><br>
+                <div style="display: flex;">
+                    <center>
+                        <input id="validPassword" type="button" value="  Aceptar  ">
                     </center>
                 </div>
             </div>

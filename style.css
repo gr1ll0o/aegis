@@ -180,7 +180,7 @@ header {
     min-width: 400px;
 }
 
-#nameService, #passwdService {
+input[type=password], input[type=text] {
     margin: 5px;
     background-color: #222;
     border: none;
@@ -190,7 +190,7 @@ header {
     user-select: none;
 }
 
-#addBtn, #CancelBtn {
+#addBtn, #CancelBtn, #validMasterkey, #validPassword {
     background-color: #333;
     color: #fff;
     font-size: 20px;

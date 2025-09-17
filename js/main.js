@@ -1,20 +1,20 @@
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
 const { ipcRenderer } = require('electron');
+const fs = require('fs');
 
 const apps = document.getElementById('appss');
 const addInterface = document.getElementById('addInterface');
+const noMasterkey = document.getElementById('noMasterkey');
+const loginForm = document.getElementById('loginForm');
+
+const saltRounds = 10;
+let data = null;
+
+const APP_FOLDER_NAME = 'Aegis';
+const FILE_NAME = 'data.json';
 
 document.getElementById("min-btn").addEventListener("click", () => {
   ipcRenderer.send("minimize-app");
-});
-
-bcrypt.hash("prueba1234", saltRounds, (error, hash) => {
-    if (error) {
-        console.log(error);
-        return;
-    }
-    console.log("Password: ", hash);
 });
 
 bcrypt.compare("prueba1234", "HASH", (error, response) => {
@@ -54,3 +54,37 @@ document.getElementById('CancelBtn').addEventListener('click', () => {
     passwdInput.value = '';
     document.getElementById('addInterface').style.display = 'none';
 });
+
+document.getElementById('validMasterkey').addEventListener('click', () => {
+    let firstPasswd = document.getElementById('firstPasswd');
+    let secondPasswd = document.getElementById('secondPasswd');
+
+    if (firstPasswd.value.length < 6) { document.getElementById('masterkeyText').style.color = '#f00'; return; }
+    if (firstPasswd.value != secondPasswd.value) { document.getElementById('masterkeyPWText').style.color = '#f00'; return; }
+
+    bcrypt.hash(firstPasswd.value, saltRounds, (error, hash) => {
+        if (error) { alert(error); return; }
+        localStorage.setItem('MASTERKEY', hash);
+    });
+    noMasterkey.style.display = 'none';
+});
+
+document.getElementById('validPassword').addEventListener('click', () => {
+    let firstPasswd = document.getElementById('passwd');
+
+    bcrypt.compare(firstPasswd.value, localStorage.getItem('MASTERKEY'), (err, response) => {
+        if (err || !response) { alert("Contraseña incorrecta.");return; }
+        loginForm.style.display = 'none';
+    });
+});
+
+async function init() {
+    if (!localStorage.getItem('MASTERKEY')) {
+        noMasterkey.style.display = 'flex';
+        return;
+    }
+
+    loginForm.style.display = 'flex';
+}
+//localStorage.removeItem('MASTERKEY');
+init();
